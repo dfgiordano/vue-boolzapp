@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="css/style.css">
+        <title>Vue Boolzapp</title>
+    </head>
+    <body>
+        <div class="background">
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="screen">
+                <div class="section_left">
+                    <div class="section_left_up">
+                        <div class="profile">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Avatar_poe84it.png" alt="avatar">
+                            <span>Nome utente</span>
+                        </div>
+                        <div class="icons">
+                            <a href="#">
+                                <i class="fas fa-circle-notch"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-comment-alt"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="section_notification"> 
+                        <div class="bell">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        <div class="notifications_text">
+                            <p>Ricevi notifiche di nuovi messaggi</p>
+                            <a href="#"> Attiva notifiche desktops </a>
+                        </div>
+                    </div>
+                    <div class="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" name="search"> 
+                    </div> 
+                    <div class="conversations">
+                        <div class="message">
+                            <div>
+                                <img src="img/avatar_1.jpg" alt="avatar">
+                            </div>
+                            <div class="contact">
+                                <h4>Michele</h4>
+                                <div>Tutto fatto &excl;...</div>
+                            </div>
+                            <div class="time">10/01/2020 16:15:22</div>
+                        </div>
+                        <div class="message">
+                            <div>
+                                <img src="https://www.creaavatar.it/wp-content/uploads/2021/01/myAvatar-15.png" alt="avatar">
+                            </div>
+                            <div class="contact">
+                                <h4>Fabio</h4>
+                                <div>Mi piacerebbe ma devo andare a... </div>
+                            </div>
+                            <div class="time">20/03/2020 16:35:00</div>
+                        </div>
+                        <div class="message">
+                            <div>
+                                <img src="https://image.freepik.com/premium-vector/young-man-wears-medical-mask-avatar-male-portrait-full-face-illustration-flat-style_276162-45.jpg" alt="avatar">
+                            </div>
+                            <div class="contact">
+                                <h4>Samuele</h4>
+                                <div>Ah scusa &excl;...</div>
+                            </div>
+                            <div class="time">28/03/2020 16:15:22</div>
+                        </div>
+                        <div class="message">
+                            <div>
+                                <img src="https://www.creaavatar.it/wp-content/uploads/2021/01/myAvatar-17.png" alt="avatar">
+                            </div>
+                            <div class="contact">
+                                <h4>Luisa</h4>
+                                <div>Si, ma preferirei andare al ci...</div>
+                            </div>
+                            <div class="time">10/01/2020 16:15:22</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="section_right">
+                    <div class="section_right_up">
+                        <div class="actual_message">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq_I0JFO2DxoAV3J-sI7ajtx0qW0Q5neaY_A&usqp=CAU" alt="avatar">
+                            <div class="info_contact">
+                                <div>Michele</div>
+                                <span>Ultimo accesso oggi alle 10/01/2020 16:15:22</span>
+                            </div>
+                        </div>
+                        <div class="icons">
+                            <a href="#">
+                                <i class="fas fa-search"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-paperclip"></i>     
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="window">
+                        <div class="new_message">
+                            <a href="#"><i class="far fa-smile"></i></a>
+                            <input type="text" placeholder="     Scrivi un messaggio">
+                            <a href="#"><i class="fas fa-microphone"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
