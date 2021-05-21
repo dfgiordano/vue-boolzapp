@@ -12,7 +12,7 @@
         <title>Vue Boolzapp</title>
     </head>
     <body>
-        <div id="root" class="background">
+        <div id='root' class="background">
             <div class="top"></div>
             <div class="bottom"></div>
             <div class="screen">
@@ -48,47 +48,16 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat" name="search"> 
                     </div> 
                     <div class="conversations">
-                        <div class="message">
+                        <div v-for="(item,index) in contacts" class="message">
                             <div>
-                                <img src="img/avatar_1.jpg" alt="avatar">
+                                <img :src="getImage(index)" :alt="item.name">
                             </div>
                             <div class="contact">
-                                <h4>Michele</h4>
+                                <h4>{{item.name}}</h4>
                                 <div>Tutto fatto &excl;...</div>
                             </div>
                             <div class="time">10/01/2020 16:15:22</div>
                         </div>
-                        <div class="message">
-                            <div>
-                                <img src="img/avatar_2.jpg" alt="avatar">
-                            </div>
-                            <div class="contact">
-                                <h4>Fabio</h4>
-                                <div>Mi piacerebbe ma devo andare a... </div>
-                            </div>
-                            <div class="time">20/03/2020 16:35:00</div>
-                        </div>
-                        <div class="message">
-                            <div>
-                                <img src="img/avatar_3.jpg" alt="avatar">
-                            </div>
-                            <div class="contact">
-                                <h4>Samuele</h4>
-                                <div>Ah scusa &excl;...</div>
-                            </div>
-                            <div class="time">28/03/2020 16:15:22</div>
-                        </div>
-                        <div class="message">
-                            <div>
-                                <img src="img/avatar_4.jpg" alt="avatar">
-                            </div>
-                            <div class="contact">
-                                <h4>Luisa</h4>
-                                <div>Si, ma preferirei andare al ci...</div>
-                            </div>
-                            <div class="time">10/01/2020 16:15:22</div>
-                        </div>
-                        
                     </div>
                 </div>
                 <div class="section_right">
@@ -128,11 +97,14 @@
                     </div>
                     <div class="new_message">
                         <a href="#"><i class="far fa-smile"></i></a>
-                        <input type="text" placeholder="     Scrivi un messaggio">
+                        <input type="text" placeholder="Scrivi un messaggio">
                         <a href="#"><i class="fas fa-microphone"></i></a>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <script src="js/script.js"></script>
     </body>
 </html>

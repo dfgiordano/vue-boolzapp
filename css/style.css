@@ -159,6 +159,9 @@
     cursor: pointer;
     border-bottom: 1px solid lightgrey;
 }
+.active {
+    background-color: #E9EBEB;
+}
 .message:hover {
     background-color: #E9EBEB;
 }

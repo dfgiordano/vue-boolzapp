@@ -1,7 +1,7 @@
 var app = new Vue (
     {
-        el: "#root",
-        data : {
+        el: '#root',
+        data: {
             contacts: [
                 {
                     name: 'Michele',
@@ -89,10 +89,10 @@ var app = new Vue (
             ]
         },
         methods: {
-
-        } ,
+            getImage : function (index) {
+                var avatar = this.contacts[index].avatar;
+                return `img/avatar${avatar}.jpg`
+            }
+        }
     }
 );
-
-
-// Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto, ricavandoli dall'array contacts qui allegato
