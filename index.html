@@ -48,7 +48,7 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat" name="search"> 
                     </div> 
                     <div class="conversations">
-                        <div v-for="(item,index) in contacts" class="message">
+                        <div v-for="(item,index) in contacts" class="message" :class="{'active' : index == activeIndex}" @click="activeContact(index)">
                             <div>
                                 <img :src="getImage(index)" :alt="item.name">
                             </div>
@@ -83,6 +83,7 @@
                     </div>
                     <div class="window">
                             <div class="sent">
+                                {{contacts.messages}}
                                 Hai portato a spasso il cane &quest;
                                 <span> 10/01/2020 15:30:55</span>
                             </div>

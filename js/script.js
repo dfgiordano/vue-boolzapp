@@ -1,3 +1,5 @@
+//Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all'interno del pannello della conversazione
+//Click sul contatto mostra la conversazione del contatto cliccato
 var app = new Vue (
     {
         el: '#root',
@@ -86,13 +88,21 @@ var app = new Vue (
                         }
                     ],
                 },
-            ]
+            ],
+            activeIndex: 0,
         },
         methods: {
             getImage : function (index) {
                 var avatar = this.contacts[index].avatar;
                 return `img/avatar${avatar}.jpg`
-            }
+            },
+            activeContact : function (index) {
+                this.activeIndex = index;
+            },
+            getMessages : function (activeIndex) {
+                var messages = this.contacts[this.activeIndex].messages;
+                return messages[activeIndex];
+            },
         }
     }
 );
