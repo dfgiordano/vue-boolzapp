@@ -90,6 +90,10 @@ var app = new Vue (
                 },
             ],
             activeIndex: 0,
+            selectedChat: {},
+        },
+        created : function () {
+            this.selectedChat = this.getCurrentChat();
         },
         methods: {
             getImage : function (index) {
@@ -98,10 +102,27 @@ var app = new Vue (
             },
             activeContact : function (index) {
                 this.activeIndex = index;
+                this.selectedChat = this.getCurrentChat();
             },
-            getMessages : function (activeIndex) {
-                var messages = this.contacts[this.activeIndex].messages;
-                return messages[activeIndex];
+            getLastMessageData: function (index) {
+                return this.contacts[index].messages[this.contacts[index].messages.length -1].date;
+            },
+            getLastMessageText: function (index) {
+                return this.contacts[index].messages[this.contacts[index].messages.length -1].text;
+            },
+            getCurrentChat : function () {
+                return this.contacts[this.activeIndex];
+            },
+            getCurrentContactName : function () {
+                return this.getCurrentChat().name;
+            },
+            getLastAccess : function () {
+                var messages = this.getCurrentChat().messages;
+                var last = messages.length-1;
+                return messages[last].date;
+            },
+            getMessageList : function () {
+                return this.getCurrentChat().messages;
             },
         }
     }

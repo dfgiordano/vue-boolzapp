@@ -53,20 +53,20 @@
                                 <img :src="getImage(index)" :alt="item.name">
                             </div>
                             <div class="contact">
-                                <h4>{{item.name}}</h4>
-                                <div>Tutto fatto &excl;...</div>
+                                <h4>{{ item.name }}</h4>
+                                <div> {{ getLastMessageText(index) }} </div>
                             </div>
-                            <div class="time">10/01/2020 16:15:22</div>
+                            <div class="time">{{ getLastMessageData(index) }}</div>
                         </div>
                     </div>
                 </div>
                 <div class="section_right">
                     <div class="section_right_up">
                         <div class="actual_message">
-                            <img src="img/avatar_1.jpg" alt="avatar">
+                            <img :src="getImage(activeIndex)" alt="">
                             <div class="info_contact">
-                                <div>Michele</div>
-                                <span>Ultimo accesso oggi alle 10/01/2020 16:15:22</span>
+                                <div>{{ getCurrentContactName() }}</div>
+                                <span>Ultimo accesso oggi alle {{ getLastAccess() }}</span>
                             </div>
                         </div>
                         <div class="icons">
@@ -82,19 +82,20 @@
                         </div>
                     </div>
                     <div class="window">
-                            <div class="sent">
-                                {{contacts.messages}}
-                                Hai portato a spasso il cane &quest;
+                        <div v-for="message in selectedChat.messages">
+                            <div :class="message.status"> 
+                                {{ message.text }} 
+                                <span> {{ message.date }} </span>
+                            </div>
+                        </div>
+                            <!-- <div class="sent"> Hai portato a spasso il cane? 
                                 <span> 10/01/2020 15:30:55</span>
                             </div>
-                            <div class="sent">
-                                Ricordati di dargli da mangiare
-                                <span> 10/01/2020 15:50:00</span>
-                            </div>
+                           
                             <div class="received">
                                 Tutto fatto &excl;
                                 <span> 10/01/2020 16:15:22</span>
-                            </div>
+                            </div> -->
                     </div>
                     <div class="new_message">
                         <a href="#"><i class="far fa-smile"></i></a>
