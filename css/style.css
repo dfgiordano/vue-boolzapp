@@ -243,17 +243,7 @@
     border-radius: 5px;
 }
 .sent {
-    display: flex;
-    align-items: center;
-    align-self: flex-end;
-    position:relative;
-    height: 50px;
-    width: 40%;
-    margin-bottom : 10px;
-    padding-left: 15px;
-    border-radius: 10px;
-    font-size: 14px;
-    margin-left: 10px;
+    float: right;
     background-color: #D5F9BA;
 }
 .sent span,
@@ -265,6 +255,9 @@
     color:#B1B1B1;
 }
 .received {
+    background-color: white;
+}
+.chat_message {
     display: flex;
     align-items: center;
     position:relative;
@@ -275,5 +268,9 @@
     border-radius: 10px;
     font-size: 14px;
     margin-left: 10px;
-    background-color: white;
+}
+.window div::after {
+    clear: both;
+    display: table;
+    content: "";
 }

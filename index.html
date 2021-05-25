@@ -48,7 +48,9 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat" name="search"> 
                     </div> 
                     <div class="conversations">
-                        <div v-for="(item,index) in contacts" class="message" :class="{'active' : index == activeIndex}" @click="activeContact(index)">
+                        <div v-for="(item,index) in contacts" class="message" 
+                        :class="{'active' : index == activeIndex}"
+                        @click="activeContact(index)">
                             <div>
                                 <img :src="getImage(index)" :alt="item.name">
                             </div>
@@ -63,7 +65,7 @@
                 <div class="section_right">
                     <div class="section_right_up">
                         <div class="actual_message">
-                            <img :src="getImage(activeIndex)" alt="">
+                            <img :src="getImage(activeIndex)" :alt="getImage(activeIndex)">
                             <div class="info_contact">
                                 <div>{{ getCurrentContactName() }}</div>
                                 <span>Ultimo accesso oggi alle {{ getLastAccess() }}</span>
@@ -83,23 +85,15 @@
                     </div>
                     <div class="window">
                         <div v-for="message in selectedChat.messages">
-                            <div :class="message.status"> 
+                            <div class="chat_message" :class=" message.status"> 
                                 {{ message.text }} 
                                 <span> {{ message.date }} </span>
                             </div>
                         </div>
-                            <!-- <div class="sent"> Hai portato a spasso il cane? 
-                                <span> 10/01/2020 15:30:55</span>
-                            </div>
-                           
-                            <div class="received">
-                                Tutto fatto &excl;
-                                <span> 10/01/2020 16:15:22</span>
-                            </div> -->
                     </div>
                     <div class="new_message">
                         <a href="#"><i class="far fa-smile"></i></a>
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input type="text" v-model="newMessage" @keyup.enter="sendNewMessage" placeholder=" Scrivi un messaggio">
                         <a href="#"><i class="fas fa-microphone"></i></a>
                     </div>
                 </div>
