@@ -129,7 +129,7 @@ var app = new Vue (
             },
             sendNewMessage : function () {
                 this.getCurrentChat().messages.push({
-                    date: '10/01/2020 16:15:22',
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     text: this.newMessage,
                     status: 'sent'
                 });
