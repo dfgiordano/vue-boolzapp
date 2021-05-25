@@ -19,7 +19,8 @@
 .bottom {
     height: calc(100vh - 130px);
     width : 100vw;
-    background-color:#D6DBD8;
+    /* background-color:#D6DBD8; */
+    background: linear-gradient(#DCDBD1, #D2DBDC);
 }
 .screen {
     height: calc(100vh - 60px);
