@@ -92,6 +92,7 @@ var app = new Vue (
             activeIndex: 0,
             selectedChat: {},
             newMessage: "",
+            searchContact: "",
         },
         created : function () {
             this.selectedChat = this.getCurrentChat();
@@ -141,7 +142,16 @@ var app = new Vue (
                 }, 1000)
                 this.newMessage= "";
             },
-            
+            filterContacts : function() {
+                this.contacts.forEach(
+                    (element) => {
+                       if(element.name.toLowerCase().includes(this.searchContact.toLowerCase())) {
+                           element.visible = true;
+                       } else {
+                           element.visible = false;
+                       }
+                });
+            }
         }
     }
 );

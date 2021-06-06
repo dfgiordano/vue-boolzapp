@@ -46,12 +46,15 @@
                     </div>
                     <div class="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat" name="search"> 
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" name="search"
+                        v-model="searchContact"
+                        @keyup="filterContacts"> 
                     </div> 
                     <div class="conversations">
                         <div v-for="(item,index) in contacts" class="message" 
-                        :class="{'active' : index == activeIndex}"
-                        @click="activeContact(index)">
+                        :class="(activeIndex == index) ? 'active' : '' "
+                        @click="activeContact(index)"
+                        v-if="item.visible == true">
                             <div>
                                 <img :src="getImage(index)" :alt="item.name">
                             </div>
